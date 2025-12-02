@@ -25,7 +25,7 @@ export default function Hero({ setCursorVariant }) {
             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
               <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <img 
-                src="/profile.png" 
+                src="/Portfolio-site/profile.png" 
                 alt="Induma Withanage" 
                 className="relative w-full h-auto object-contain drop-shadow-2xl"
               />
