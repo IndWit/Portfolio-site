@@ -17,10 +17,21 @@ export default function Skills() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-          {Object.entries(techStack).map(([category, techs]) => (
-            <div key={category} className="group relative bg-gradient-to-br from-gray-900/30 to-black/30 backdrop-blur-md border border-gray-800 rounded-3xl p-8 hover:border-orange-500/50 transition-all duration-500 hover:scale-105">
+          {Object.entries(techStack).map(([category, techs], index) => (
+            <div key={category} className="group relative bg-gradient-to-br from-gray-900/30 to-black/30 backdrop-blur-md border border-gray-800 rounded-3xl p-8 hover:border-orange-500/50 transition-all duration-500 hover:scale-105 overflow-hidden"
+              style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+              
+              {/* Floating tech icons in background */}
+              <div className="absolute top-[60%] right-18 -translate-y-1/2 grid grid-cols-2 gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                {techs.slice(0, 6).map((tech, idx) => (
+                  <div key={idx} className="w-7 h-7 animate-float" style={{ animationDelay: `${idx * 0.3}s` }}>
+                    <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                  </div>
+                ))}
+              </div>
+
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-2 h-8 bg-gradient-to-b from-orange-500 to-orange-600 rounded-full"></div>
@@ -30,7 +41,7 @@ export default function Skills() {
                   {techs.map((tech, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-gray-300 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300">
                       <div className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 group-hover:scale-150 transition-transform"></div>
-                      <span className="font-mono text-sm">{tech}</span>
+                      <span className="font-mono text-sm">{tech.name}</span>
                     </div>
                   ))}
                 </div>

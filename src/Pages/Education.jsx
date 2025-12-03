@@ -20,9 +20,9 @@ export default function Education() {
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
             <div className="relative z-10">
-              <div className="text-transparent bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text font-mono text-sm font-bold mb-4">2020-2024</div>
-              <h3 className="text-3xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-white group-hover:bg-clip-text transition-all">B.Sc. Computer Science</h3>
-              <div className="text-xl text-gray-400 mb-4">University Name</div>
+              <div className="text-transparent bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text font-mono text-sm font-bold mb-4">2023-Present</div>
+              <h3 className="text-3xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-white group-hover:bg-clip-text transition-all">BSc (Hons) in Computing and Information Systems</h3>
+              <div className="text-xl text-gray-400 mb-4">Sabaragamuwa University of Sri Lanka</div>
               <div className="h-1 w-16 bg-gradient-to-r from-orange-500 to-transparent rounded-full mb-4"></div>
               <p className="text-gray-500 leading-relaxed">Specialization in Software Engineering</p>
             </div>
@@ -32,9 +32,9 @@ export default function Education() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
             <div className="relative z-10">
-              <div className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-mono text-sm font-bold mb-4">2018-2020</div>
-              <h3 className="text-3xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white to-orange-400 group-hover:bg-clip-text transition-all">High School Diploma</h3>
-              <div className="text-xl text-gray-400 mb-4">School Name</div>
+              <div className="text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text font-mono text-sm font-bold mb-4">2021</div>
+              <h3 className="text-3xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white to-orange-400 group-hover:bg-clip-text transition-all">G.C.E Advanced Level</h3>
+              <div className="text-xl text-gray-400 mb-4">Sivali Central College - Rathnapura</div>
               <div className="h-1 w-16 bg-gradient-to-r from-white to-transparent rounded-full mb-4"></div>
               <p className="text-gray-500 leading-relaxed">Science Stream</p>
             </div>
@@ -51,9 +51,9 @@ export default function Education() {
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                "Certification 1",
-                "Certification 2",
-                "Certification 3",
+                "Postman API Fundamentals Student Expert - Postman",
+                "Multicloud Network Associate certification",
+                "Python for beginners - UOM",
                 "Certification 4"
               ].map((cert, idx) => (
                 <div key={idx} className="group flex items-center gap-3 p-5 bg-black/50 border border-gray-800 rounded-2xl hover:border-orange-500/50 hover:bg-orange-500/5 transition-all duration-300 hover:scale-105">
