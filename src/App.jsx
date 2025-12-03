@@ -61,7 +61,7 @@ export default function App() {
                 IW
               </div>
               <div>
-                <p className="text-gray-400 font-mono text-sm">© 2024 INDUMA WITHANAGE</p>
+                <p className="text-gray-400 font-mono text-sm">© 2025 INDUMA WITHANAGE</p>
                 <p className="text-gray-600 text-xs">ENGINEERED WITH PRECISION</p>
               </div>
             </div>
