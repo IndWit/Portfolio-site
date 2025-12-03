@@ -29,7 +29,7 @@ export default function Navbar({ setCursorVariant }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['hero', 'about', 'projects', 'achievements', 'tech', 'education', 'volunteering', 'contact'];
+  const navItems = ['about', 'projects', 'achievements', 'tech', 'education', 'volunteering', 'contact'];
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function Navbar({ setCursorVariant }) {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed top-6 right-6 z-50 lg:hidden bg-gray-900/90 backdrop-blur-md border border-orange-500/30 rounded-full p-3 shadow-lg hover:border-orange-500 transition-all"
+        className="fixed top-6 right-6 z-50 lg:hidden bg-black/80 backdrop-blur-md border border-gray-800 rounded-xl p-3 shadow-lg hover:border-orange-500/50 transition-all"
       >
         {isMobileMenuOpen ? (
           <X className="w-6 h-6 text-orange-400" />
@@ -77,29 +77,37 @@ export default function Navbar({ setCursorVariant }) {
       }`}>
         {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/90 backdrop-blur-md"
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
         
         {/* Menu Content */}
-        <div className={`absolute top-0 right-0 h-full w-80 max-w-[80vw] bg-gradient-to-br from-gray-900 to-black border-l border-orange-500/30 shadow-2xl transition-transform duration-300 ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        <div className={`absolute inset-x-4 top-24 max-h-[calc(100vh-8rem)] overflow-y-auto transition-all duration-500 ${
+          isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
         }`}>
-          <div className="flex flex-col items-start gap-2 p-8 mt-20">
-            {navItems.map((section, index) => (
-              <button
-                key={section}
-                onClick={() => scrollTo(section)}
-                className={`w-full text-left px-6 py-4 rounded-2xl font-mono text-lg transition-all duration-300 ${
-                  activeSection === section
-                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30'
-                    : 'text-gray-300 hover:bg-gray-800/50 hover:text-orange-400 hover:translate-x-2'
-                }`}
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {section.toUpperCase()}
-              </button>
-            ))}
+          <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-6 shadow-2xl">
+            <div className="grid grid-cols-2 gap-3">
+              {navItems.map((section, index) => (
+                <button
+                  key={section}
+                  onClick={() => scrollTo(section)}
+                  className={`relative overflow-hidden px-4 py-6 rounded-2xl font-mono text-sm transition-all duration-300 ${
+                    activeSection === section
+                      ? 'bg-orange-500/80 backdrop-blur-sm text-white shadow-lg shadow-orange-500/30 scale-105'
+                      : 'bg-gray-800/40 backdrop-blur-sm text-gray-300 hover:bg-gray-700/50 hover:text-orange-400 hover:scale-105 active:scale-95'
+                  }`}
+                  style={{ 
+                    animationDelay: `${index * 0.05}s`,
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-orange-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 flex flex-col items-center gap-1">
+                    <span className="font-bold">{section.toUpperCase()}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
